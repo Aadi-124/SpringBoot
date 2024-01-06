@@ -28,9 +28,11 @@ public class CourseController {
   
     @GetMapping("/data")
     public String showData(){
-        return "<h1> findAll() = "+repository.findAll().toString()+"</h1>";
+        // return "<h1> findAll() = "+repository.findAll().toString()+"</h1>";
         // return "<h1>repository.count() = "+repository.count()+"</h1>";
-        // return "<h1>repository.Author('Jakson') = "+repository.findByAuthor("Jakson")+"</h1>";
+        return "<h1>repository.findByAuthor('Jakson') = "+repository.findByAuthor("Mark")+"</h1>";
+        // return "<h1>repository.findByName('Shlok') = "+repository.findByName("Shlok")+"</h1>";
+        
     }
 
 
