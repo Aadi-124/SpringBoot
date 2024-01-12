@@ -10,6 +10,7 @@
     <h1>welcome to the page ${name}</h1>
     <h2>Your are logged in successfully!</h2>
     <h1>Yout password is : ${password}</h1>
+    <h3><a href="/todo-list">Manage</a> Your Todos!</h3>
 
 </body>
 </html>

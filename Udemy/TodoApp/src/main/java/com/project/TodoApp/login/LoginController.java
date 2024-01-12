@@ -8,12 +8,14 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
+@SessionAttributes("name")      // The session Attributes are basically used to make a variable accessible to all the path define in this class.
 public class LoginController {
     
     // this is just to print data as 'sout' at different logging levels
-    // private Logger logger = LoggerFactory.getLogger(getClass()); 
+    // private Logger logger = LoggerFactory.getLogger(getClass());  
 
 
     // @RequestMapping("login")
