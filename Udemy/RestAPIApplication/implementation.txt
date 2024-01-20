@@ -1,0 +1,5 @@
+1) Exception Handling!
+2) Get Request for Getting Data
+3) Post Mapping for creating Entity
+4) Delete Mapping for deleting Entity
+5) Validations for SpringBoot!
