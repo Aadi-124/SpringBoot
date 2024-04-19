@@ -1,12 +1,15 @@
 package com.restapi.RestAPIApplication.Controller;
 
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 // import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class HelloController {
 
 
@@ -44,7 +47,10 @@ public class HelloController {
         return new HelloWorldBean("Welcome "+name);
     }
     
-   
+    @GetMapping("/rest")
+    public RestAPIBean restAPI(){
+        return new RestAPIBean("2020", "Aaditya", "20", "5000000", "12-04-2004");
+    }
 
 
     

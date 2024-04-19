@@ -19,21 +19,17 @@ public class UserResourse {
 
     public UserDaoService service; 
     @Autowired
-    public UserDBService repo;
+
+    // public UserDBService repo;
 
     public UserResourse(UserDaoService service){
         this.service = service;
     }
 
-    @GetMapping("/users")
-    public List<Users> retriveAllUsers(){
-        return service.findAll();
-    }
-
 
     @GetMapping("/users/{Id}")
-    public String retrieveUser(@PathVariable int Id){
-        return repo.findOne(Id);
+    public List<Users> retrieveUser(@PathVariable int Id){
+        return service.findAll(Id);
     }
 
     @DeleteMapping("/users/{Id}")
@@ -45,7 +41,6 @@ public class UserResourse {
     @PostMapping("/users")
     public ResponseEntity<Users> create(@RequestBody Users user){
         service.save(user);
-
         // This is the Path
         URI location = ServletUriComponentsBuilder.fromCurrentContextPath().path("/users/{id}").buildAndExpand(user.getId()).toUri(); 
 

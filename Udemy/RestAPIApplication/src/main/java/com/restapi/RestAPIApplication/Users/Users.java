@@ -2,9 +2,14 @@ package com.restapi.RestAPIApplication.Users;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 import java.time.LocalDate;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 
@@ -13,6 +18,7 @@ public class Users {
 
 
     @Id
+    @GeneratedValue
     private Integer id;
 
     @Column
@@ -21,14 +27,30 @@ public class Users {
     @Column
     private LocalDate birthDate;
 
+    // A user has one to many relationship with the post 
+    // One user can have multiple posts 
+    @OneToMany(mappedBy = "users")
+    @JsonIgnore
+    private List<Posts> posts;
+    
+    public List<Posts> getPosts() {
+        return posts;
+    }
+    
+
+    public void setPosts() {
+        this.posts = posts;
+    }
+
     public Users(){
 
     }
 
-    public Users(int id, String name, LocalDate birthDate) {
+    public Users(int id, String name, LocalDate birthDate,List<Posts> posts) {
         this.id = id;
         this.name = name;
         this.birthDate = birthDate;
+        this.posts = posts;
     }
 
     public int getId() {

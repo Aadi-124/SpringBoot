@@ -3,3 +3,5 @@
 3) Post Mapping for creating Entity
 4) Delete Mapping for deleting Entity
 5) Validations for SpringBoot!
+6) Database Connection CURD Operations!
+7) Creating multiple posts for Single User!.
