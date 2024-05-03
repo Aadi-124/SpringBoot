@@ -12,15 +12,15 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 
-@ControllerAdvice
-public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
+// @ControllerAdvice
+// public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
     
-    @ExceptionHandler(Exception.class)
-    public final ResponseEntity<Object> handleExceptionEntity(Exception ex, WebRequest request){
-        ErrorDetails errorDetails = new ErrorDetails(LocalDate.now(),"Error AAla BEE!",request.getDescription(false));
-        return new ResponseEntity(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
-    }
-//
+//     @ExceptionHandler(Exception.class)
+//     public final ResponseEntity<Object> handleExceptionEntity(Exception ex, WebRequest request){
+//         ErrorDetails errorDetails = new ErrorDetails(LocalDate.now(),"Error AAla BEE!",request.getDescription(false));
+//         return new ResponseEntity(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
+//     }
+// //
 
 
-}
+// }

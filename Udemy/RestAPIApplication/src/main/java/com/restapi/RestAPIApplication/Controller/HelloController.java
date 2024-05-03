@@ -2,20 +2,14 @@ package com.restapi.RestAPIApplication.Controller;
 
 
 import org.springframework.web.bind.annotation.CrossOrigin;
-// import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
 
+@RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class HelloController {
-
-
-    // @Autowired(required=true)
-    // HelloWorldBean bean;
-
 
 
     @GetMapping(path = "/")
@@ -31,7 +25,7 @@ public class HelloController {
 
     @GetMapping(path = "/greet2")
     public String greet2(){
-        return "Hello Greet2";
+        return "Hello Greeting 2";
     }
 
 
